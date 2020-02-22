@@ -1,0 +1,20 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.employee-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.student-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
