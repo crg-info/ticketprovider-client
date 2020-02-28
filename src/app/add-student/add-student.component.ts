@@ -20,11 +20,10 @@ export class AddStudentComponent implements OnInit {
     //alert(window.localStorage.getItem('token'))
     this.addForm = this.formBuilder.group({
       id: [],
-    studentname: ['', [Validators.required]
-                 ],
-      password: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+    studentname: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
+      password: ['', [Validators.required ,Validators.minLength(2) , Validators.maxLength(10)]],
+      firstName: ['', [Validators.required ,Validators.minLength(2) , Validators.maxLength(10)]],
+      lastName: ['', [Validators.required ,Validators.minLength(2) , Validators.maxLength(10)]],
       rollno: ['', Validators.required],
       branch: ['', Validators.required]
     });

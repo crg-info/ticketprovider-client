@@ -17,12 +17,12 @@ export class AddUserComponent implements OnInit {
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       id: [],
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      age: ['', Validators.required],
-      salary: ['', Validators.required]
+      username: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
+      password: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(8)]],
+      firstName: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
+      lastName: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
+      age: ['', [Validators.required ]],
+      salary: ['',[Validators.required]]
     });
 
   }

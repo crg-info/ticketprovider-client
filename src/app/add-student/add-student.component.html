@@ -4,27 +4,36 @@
         <div class="form-group">
             <label for="studentname">Student Name:</label>
             <input type="text" formControlName="studentname" placeholder="studentname" name="studentname" class="form-control" id="studentname">
-            <!-- <div *ngIf="f.studentname.errors.minlength" style="color: red;">Studentname must be at least 2 characters</div> -->
+            <div class="error" *ngIf="addForm.controls['studentname'].hasError('required') && addForm.controls['studentname'].touched">studentname is required</div>
+            <div class="error" *ngIf="addForm.controls['studentname'].hasError('minlength') && addForm.controls['studentname'].touched || addForm.controls['studentname'].hasError('maxlength') && addForm.controls['studentname'].touched">studentname must be grater than 2 charectors and less than 10 charectors</div>
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
             <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+            <div class="error" *ngIf="addForm.controls['password'].hasError('required') && addForm.controls['password'].touched">password is required</div>
+            <div class="error" *ngIf="addForm.controls['password'].hasError('minlength') && addForm.controls['password'].touched || addForm.controls['password'].hasError('maxlength') && addForm.controls['password'].touched">password must be grater than 2 charectors and less than 8 charectors</div>
         </div>
         <div class="form-group">
             <label for="firstName">FirstName:</label>
             <input formControlName="firstName" placeholder="firstName" name="firstName" class="form-control" id="firstName">
+            <div class="error" *ngIf="addForm.controls['firstName'].hasError('required') && addForm.controls['firstName'].touched">firstName is required</div>
+            <div class="error" *ngIf="addForm.controls['firstName'].hasError('minlength') && addForm.controls['firstName'].touched || addForm.controls['firstName'].hasError('maxlength') && addForm.controls['firstName'].touched">firstName must be grater than 2 charectors and less than 10 charectors</div>
         </div>
         <div class="form-group">
             <label for="lastName">LastName:</label>
             <input formControlName="lastName" placeholder="lastName" name="lastName" class="form-control" id="lastName">
+            <div class="error" *ngIf="addForm.controls['lastName'].hasError('required') && addForm.controls['lastName'].touched">lastName is required</div>
+      <div class="error" *ngIf="addForm.controls['lastName'].hasError('minlength') && addForm.controls['lastName'].touched || addForm.controls['lastName'].hasError('maxlength') && addForm.controls['lastName'].touched">lastName must be grater than 2 charectors and less than 10 charectors</div>  
         </div>
         <div class="form-group">
             <label for="rollno">RollNo:</label>
             <input type="number" formControlName="rollno" placeholder="rollno" name="rollno" class="form-control" id="rollno">
+            <div class="error" *ngIf="addForm.controls['rollno'].hasError('required') && addForm.controls['rollno'].touched">rollno is required</div>        
         </div>
         <div class="form-group">
             <label for="branch">Branch:</label>
             <input type="text" formControlName="branch" placeholder="branch" name="branch"class="form-control" id="branch">
+            <div class="error" *ngIf="addForm.controls['branch'].hasError('required') && addForm.controls['branch'].touched">branch is required</div>
         </div>
         <button class="btn btn-success">Update</button>
     </form>
