@@ -9,17 +9,6 @@ import { Student } from '../model/student.model';
 @Injectable()
 export class ApiService {
   [x: string]: any;
-  getCustomersByFirstName: any;
-  
-  getCustomersByUserName(UserName: (UserName: any) => void) {
-    throw new Error("Method not implemented.");
-  }
-  getCustomersByEmployeeName(UserName: (EmployeeName: any) => void) {
-    throw new Error("Method not implemented.");
-  }
-  getCustomersByStudentName(UserName: (StudentName: any) => void) {
-    throw new Error("Method not implemented.");
-  }
 
   constructor(private http: HttpClient) { }
   baseUrl: string = 'http://localhost:8080/users/';
@@ -43,6 +32,10 @@ export class ApiService {
   getUserById(id: number): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.baseUrl + id);
   }
+  getUserBySalary(salary: number): Observable<ApiResponse> {debugger;
+    return this.http.get<ApiResponse>(this.baseUrl+'searchUserById/'+ salary);
+  }
+
 
   createUser(user: User): Observable<ApiResponse> {debugger;
     return this.http.post<ApiResponse>(this.baseUrl, user);

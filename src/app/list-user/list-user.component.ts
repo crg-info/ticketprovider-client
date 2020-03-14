@@ -11,7 +11,8 @@ import {ApiService} from "../core/api.service";
 export class ListUserComponent implements OnInit {
 
   users: User[];
-
+ searchTerm: string;
+ 
   constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit() {
@@ -41,5 +42,8 @@ export class ListUserComponent implements OnInit {
   addUser(): void {
     this.router.navigate(['add-user']);
   }; 
-
+ 
+  searchUser(user : User):void{
+    this.router.navigate(['search-user']);
+  };
 }

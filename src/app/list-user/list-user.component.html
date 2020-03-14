@@ -1,10 +1,12 @@
-<div>
-<!-- <a routerLink="findbyfirstname" class="btn btn-primary active" role="button" routerLinkActive="active">Search</a> -->
-</div>
+
 <div class="col-md-6 user-container">
   <h2 style="margin: auto"> User Details</h2>
+  <div class="form-group">
+    
+    <input type="text" class="form-control" placeholder="search" style="width:300px" [(ngModel)]="searchTerm">
+   </div>
   <button class="btn btn-danger" style="width:100px" (click)="addUser()"> Add User</button>
-  
+  <button class="btn btn-danger" style="width:100px" (click)="searchUser()"> Serach Users</button>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -17,7 +19,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users | userFilter:searchTerm">
       <td class="hidden">{{user.id}}</td>
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>

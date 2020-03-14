@@ -9,7 +9,8 @@
         <input type="text" class="form-control" formControlName="username" placeholder="username" id="username" autocomplete="off">
         <div class="error" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Username is required</div>
       <div class="error" *ngIf="loginForm.controls['username'].hasError('minlength') && loginForm.controls['username'].touched || loginForm.controls['username'].hasError('maxlength') && loginForm.controls['username'].touched">Username must be grater than 2 charectors and less than 10 charectors</div>
-      </div>
+      
+    </div>
     
       <div class="form-group">
         <label for="pwd"><i class="fa fa-lock" aria-hidden="true"></i> Password:</label>

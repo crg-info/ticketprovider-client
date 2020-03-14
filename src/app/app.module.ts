@@ -20,6 +20,12 @@ import { SearchComponent } from './search/search.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { ListStudentComponent } from './list-student/list-student.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchUserComponent } from './search-user/search-user.component';
+import { SearchEmployeeComponent } from './search-employee/search-employee.component';
+import { SearchStudentComponent } from './search-student/search-student.component';
+import { FormsModule } from '@angular/forms';
+import { UserFilterPipe } from 'user-filter.pipe';
 
 
 @NgModule({
@@ -36,13 +42,22 @@ import { ListStudentComponent } from './list-student/list-student.component';
     LoginEmployeeComponent,
     AddStudentComponent,
     EditStudentComponent,
-    ListStudentComponent
+    ListStudentComponent,
+    SearchUserComponent,
+    SearchEmployeeComponent,
+    SearchStudentComponent,
+    UserFilterPipe
   ],
   imports: [
     BrowserModule,
     routing,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+   
+    BrowserAnimationsModule,
+    FormsModule 
+    
+
   
   ],
   providers: [ApiService, {provide: HTTP_INTERCEPTORS,

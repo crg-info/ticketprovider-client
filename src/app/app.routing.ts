@@ -10,8 +10,12 @@ import { LoginEmployeeComponent } from './login-employee/login-employee.componen
 import { AddStudentComponent } from './add-student/add-student.component';
 import { ListStudentComponent } from './list-student/list-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import { SearchUserComponent } from './search-user/search-user.component';
+import { SearchEmployeeComponent } from './search-employee/search-employee.component';
+import { SearchStudentComponent } from './search-student/search-student.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'add-user', component: AddUserComponent },
   { path: 'list-user', component: ListUserComponent },
@@ -22,7 +26,10 @@ const routes: Routes = [
   { path: 'login-employee', component: LoginEmployeeComponent },
   { path: 'add-student', component: AddStudentComponent },
   { path: 'list-student', component: ListStudentComponent },
-  { path: 'edit-student', component: EditStudentComponent }
+  { path: 'edit-student', component: EditStudentComponent },
+  { path: 'search-user', component: SearchUserComponent},
+  { path: 'search-employee', component: SearchEmployeeComponent},
+  { path: 'search-student', component: SearchStudentComponent}
 ];
 
 export const routing = RouterModule.forRoot(routes);

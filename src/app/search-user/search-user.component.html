@@ -1,0 +1,19 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center"> Find By Salary</h2>
+     
+        <div >
+          <label for="salary">salary:</label>
+          <input type="text"  placeholder="salary" name="salary" class="form-control" id="salary" [(ngModel)]="salary">
+        
+  
+    <button type="button" class="btn btn-success" (click)="getUserBySalary()">Submit</button>
+  </div>   
+
+</div>
+<ul>
+<li *ngFor="let user of users">
+  <h4>{{customer.id}} - {{user.firstName}}  {{user.lastName}}  {{user.username}}  {{user.age}}  {{user.salary}}</h4>
+</li>
+</ul>
+
+
