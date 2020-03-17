@@ -1,0 +1,27 @@
+<div class="row">
+<div class="col-md-6 login-container" >
+    <h2 style="margin: auto ">Login </h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <label for="username"><i class="fa fa-user" aria-hidden="true"></i> UserName:</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="username" id="username" autocomplete="off">
+        <div class="error" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Username is required</div>
+      <div class="error" *ngIf="loginForm.controls['username'].hasError('minlength') && loginForm.controls['username'].touched || loginForm.controls['username'].hasError('maxlength') && loginForm.controls['username'].touched">Username must be grater than 2 charectors and less than 10 charectors</div>
+      
+    </div>
+    
+      <div class="form-group">
+        <label for="pwd"><i class="fa fa-lock" aria-hidden="true"></i> Password:</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="password" id="pwd" autocomplete="off"> 
+       
+        <div class="error" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">Password is required</div>
+        <div class="error" *ngIf="loginForm.controls['password'].hasError('minlength') && loginForm.controls['password'].touched || loginForm.controls['password'].hasError('maxlength') && loginForm.controls['password'].touched">Password must be grater than 2 charectors and less than 8 charectors</div>
+      </div>
+      <button class="btn btn-success" [disabled]="loginForm.invalid">Login</button>
+      <div *ngIf="invalidLogin" class="error">
+        <div>Invalid credentials.</div>
+      </div>
+    </form>
+  </div>
+</div>
