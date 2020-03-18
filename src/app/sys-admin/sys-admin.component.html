@@ -1,0 +1,59 @@
+<div class="col-md-6 admin-container">
+    <h1 class="text-center" style="color:brown">System Admin SignUp</h1>
+    <form [formGroup]="signForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username">
+        <div class="error" *ngIf="signForm.controls['username'].hasError('required') && signForm.controls['username'].touched">Username is required</div>
+        <div class="error" *ngIf="signForm.controls['username'].hasError('minlength') && signForm.controls['username'].touched || signForm.controls['username'].hasError('maxlength') && signForm.controls['username'].touched">Username must be grater than 2 charectors and less than 10 charectors</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+        <div class="error" *ngIf="signForm.controls['firstName'].hasError('required') && signForm.controls['firstName'].touched">firstName is required</div>
+        <div class="error" *ngIf="signForm.controls['firstName'].hasError('minlength') && signForm.controls['firstName'].touched || signForm.controls['firstName'].hasError('maxlength') && signForm.controls['firstName'].touched">firstName must be grater than 2 charectors and less than 10 charectors</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input formControlName="lastName" placeholder="Last Name" name="lastName" class="form-control" id="lastName">
+        <div class="error" *ngIf="signForm.controls['lastName'].hasError('required') && signForm.controls['lastName'].touched">lastName is required</div>
+        <div class="error" *ngIf="signForm.controls['lastName'].hasError('minlength') && signForm.controls['lastName'].touched || signForm.controls['lastName'].hasError('maxlength') && signForm.controls['lastName'].touched">lastName must be grater than 2 charectors and less than 10 charectors</div>
+      </div>
+      <div class="form-group">
+        <label for="companyName">Company Name:</label>
+        <input formControlName="companyName" placeholder="Company Name" name="companyName" class="form-control" id="companyName">
+        <div class="error" *ngIf="signForm.controls['companyName'].hasError('required') && signForm.controls['companyName'].touched">Company Name is required</div>
+        </div>
+      
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+        <div class="error" *ngIf="signForm.controls['email'].hasError('required') && signForm.controls['email'].touched">email is required</div>    
+      </div>
+      <div class="form-group">
+        <label for="phonenumber">PhoneNumber:</label>
+        <input type="number" formControlName="phonenumber" placeholder="phonenumber" name="phonenumber" class="form-control" id="phonenumber">
+        <div class="error" *ngIf="signForm.controls['phonenumber'].hasError('required') && signForm.controls['phonenumber'].touched">PhoneNumber is required</div>
+        
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea rows="5" cols="10" formControlName="address" placeholder="address" name="address" class="form-control" id="address"></textarea>
+        <div class="error" *ngIf="signForm.controls['address'].hasError('required') && signForm.controls['address'].touched">Address is required</div>  
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
+        <div class="error" *ngIf="signForm.controls['password'].hasError('required') && signForm.controls['password'].touched">Password is required</div>  
+      </div>
+      <div class="form-group">
+        <label for="conformpassword">ConformPassword:</label>
+        <input type="password" formControlName="conformpassword" placeholder="conformpassword" name="conformpassword" class="form-control" id="conformpassword">
+        <div class="error" *ngIf="signForm.controls['conformpassword'].hasError('required') && signForm.controls['conformpassword'].touched">Password is required</div>  
+      </div>
+      <button class="btn btn-success">SignUp</button>
+    </form>
+  </div>
+  

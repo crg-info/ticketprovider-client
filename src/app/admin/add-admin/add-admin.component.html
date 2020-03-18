@@ -1,0 +1,59 @@
+<div class="col-md-6 admin-container">
+    <h1 class="text-center" style="color:brown">Add Admin</h1>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username">
+        <div class="error" *ngIf="addForm.controls['username'].hasError('required') && addForm.controls['username'].touched">Username is required</div>
+        <div class="error" *ngIf="addForm.controls['username'].hasError('minlength') && addForm.controls['username'].touched || addForm.controls['username'].hasError('maxlength') && addForm.controls['username'].touched">Username must be grater than 2 charectors and less than 10 charectors</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="travelName">Travel Name:</label>
+        <input type="text" formControlName="travelName" placeholder="Travel Name" name="travelName" class="form-control" id="travelName">
+        <div class="error" *ngIf="addForm.controls['travelName'].hasError('required') && addForm.controls['travelName'].touched">Travel Name is required</div>
+      </div>
+  
+      <div class="form-group">
+        <label for="adminName"> Admin Name:</label>
+        <input type="text" formControlName="adminName" placeholder="Admin Name" name="adminName" class="form-control" id="adminName">
+        <div class="error" *ngIf="addForm.controls['adminName'].hasError('required') && addForm.controls['adminName'].touched">Admin Name is required</div>
+        <div class="error" *ngIf="addForm.controls['adminName'].hasError('minlength') && addForm.controls['adminName'].touched || addForm.controls['adminName'].hasError('maxlength') && addForm.controls['adminName'].touched">Admin Name must be grater than 2 charectors and less than 10 charectors</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email"> Email:</label>
+        <input type="email" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+        <div class="error" *ngIf="addForm.controls['email'].hasError('required') && addForm.controls['email'].touched">email is required</div>    
+      </div>
+      <div class="form-group">
+        <label for="phonenumber"> PhoneNumber:</label>
+        <input type="number" formControlName="phonenumber" placeholder="phonenumber" name="phonenumber" class="form-control" id="phonenumber">
+        <div class="error" *ngIf="addForm.controls['phonenumber'].hasError('required') && addForm.controls['phonenumber'].touched">PhoneNumber is required</div>
+         </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea rows="5" cols="10" formControlName="address" placeholder="address" name="address" class="form-control" id="address"></textarea>
+        <div class="error" *ngIf="addForm.controls['address'].hasError('required') && addForm.controls['address'].touched">Address is required</div>  
+      </div>
+      <div class="form-group">
+        <label for="adminBusses"> Admin Busses:</label>
+        <input type="number" formControlName="adminBusses" placeholder="No Of Busses" name="adminBusses" class="form-control" id="adminBusses">
+        <div class="error" *ngIf="addForm.controls['adminBusses'].hasError('required') && addForm.controls['adminBusses'].touched">Admin Busses is required</div>
+        
+      </div>
+      <div class="form-group">
+        <label for="createDate">Create Date:</label>
+        <input type="date" formControlName="createDate" placeholder="Create Date" name="createDate" class="form-control" id="createDate">
+        <div class="error" *ngIf="addForm.controls['createDate'].hasError('required') && addForm.controls['createDate'].touched">Create Date is required</div>
+      </div>
+      <div class="form-group">
+        <label for="expireDate">Expire Date:</label>
+        <input type="date" formControlName="expireDate" placeholder="Expire Date" name="expireDate" class="form-control" id="expireDate">
+        <div class="error" *ngIf="addForm.controls['expireDate'].hasError('required') && addForm.controls['expireDate'].touched">Expire Date is required</div>
+      </div>
+      
+      <button class="btn btn-success">Update</button>
+    </form>
+  </div>
+  

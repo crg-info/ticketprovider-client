@@ -35,6 +35,13 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
+import { AdminComponent } from './admin/admin/admin.component';
+import { AddAdminComponent } from './admin/add-admin/add-admin.component';
+import { EditAdminComponent } from './admin/edit-admin/edit-admin.component';
+import { ListAdminComponent } from './admin/list-admin/list-admin.component';
+import { SysAdminComponent } from './sys-admin/sys-admin.component';
+import { AddBussesComponent } from './bus/add-busses/add-busses.component';
+import { SearchBussesComponent } from './bus/search-busses/search-busses.component';
 
 
 
@@ -65,6 +72,13 @@ import { SignupComponent } from './signup/signup.component';
     FooterComponent,
     HomeComponent,
     SignupComponent,
+    AdminComponent,
+    AddAdminComponent,
+    EditAdminComponent,
+    ListAdminComponent,
+    SysAdminComponent,
+    AddBussesComponent,
+    SearchBussesComponent,
     
   ],
   imports: [

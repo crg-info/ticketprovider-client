@@ -15,6 +15,13 @@ import { SearchEmployeeComponent } from './employee/search-employee/search-emplo
 import { SearchStudentComponent } from './student/search-student/search-student.component';
 import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
+import { AdminComponent } from './admin/admin/admin.component';
+import { AddAdminComponent } from './admin/add-admin/add-admin.component';
+import { EditAdminComponent } from './admin/edit-admin/edit-admin.component';
+import { ListAdminComponent } from './admin/list-admin/list-admin.component';
+import { SysAdminComponent } from './sys-admin/sys-admin.component';
+import { AddBussesComponent } from './bus/add-busses/add-busses.component';
+import { SearchBussesComponent } from './bus/search-busses/search-busses.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -34,7 +41,13 @@ const routes: Routes = [
   { path: 'search-student', component: SearchStudentComponent},
   { path: 'home', component: HomeComponent},
   { path: 'signup', component: SignupComponent},
- 
+  { path: 'add-admin', component: AddAdminComponent},
+  { path: 'edit-admin', component: EditAdminComponent},
+  { path: 'list-admin', component: ListAdminComponent},
+  { path: 'sys-admin', component: SysAdminComponent},
+  { path: 'add-busses', component: AddBussesComponent},
+  { path: 'admin', component: AdminComponent},
+  { path: 'search-busses', component: SearchBussesComponent},
 
 ];
 

@@ -1,0 +1,54 @@
+<div class="col-md-6 admin-container">
+    <h1 class="text-center" style="color:brown">Edit Admin</h1>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="hidden">
+            <input type="text" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+          </div>
+
+      <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="text" formControlName="username" placeholder="username" name="username" class="form-control" id="username">
+      </div>
+  
+      <div class="form-group">
+        <label for="travelName">Travel Name:</label>
+        <input type="text" formControlName="travelName" placeholder="Travel Name" name="travelName" class="form-control" id="travelName">
+      </div>
+  
+      <div class="form-group">
+        <label for="adminName"> Admin Name:</label>
+        <input type="text" formControlName="adminName" placeholder="Admin Name" name="adminName" class="form-control" id="adminName">
+      </div>
+      
+      <div class="form-group">
+        <label for="email"> Email:</label>
+        <input type="email" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+        
+      </div>
+      <div class="form-group">
+        <label for="phonenumber"> PhoneNumber:</label>
+        <input type="number" formControlName="phonenumber" placeholder="phonenumber" name="phonenumber" class="form-control" id="phonenumber">
+        
+         </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea rows="5" cols="10" formControlName="address" placeholder="address" name="address" class="form-control" id="address"></textarea>
+         </div>
+      <div class="form-group">
+        <label for="adminBusses"> Admin Busses:</label>
+        <input type="number" formControlName="adminBusses" placeholder="No Of Busses" name="adminBusses" class="form-control" id="adminBusses">
+        </div>
+      <div class="form-group">
+        <label for="createDate">Create Date:</label>
+        <input type="date" formControlName="createDate" placeholder="Create Date" name="createDate" class="form-control" id="createDate">
+        </div>
+      <div class="form-group">
+        <label for="expireDate">Expire Date:</label>
+        <input type="date" formControlName="expireDate" placeholder="Expire Date" name="expireDate" class="form-control" id="expireDate">
+      </div>
+      
+      <button class="btn btn-success">Update</button>
+    </form>
+  </div>
+  
+

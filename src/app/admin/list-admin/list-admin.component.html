@@ -1,0 +1,43 @@
+
+<div class="col-md-6 admin-container">
+    <h1 style="margin: auto"> Admin Details</h1>
+    <div class="form-group">
+      
+      <input type="text" class="form-control" placeholder="search" style="width:300px" [(ngModel)]="searchTerm">
+     </div>
+    <button class="btn btn-danger" style="width:100px" (click)="addAdmin()"> Add Admin</button>
+    
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>User Name</th>
+        <th>Travel Name</th>
+        <th>Admin Name</th>
+        <th>Email</th>
+        <th>PhoneNumber</th>
+        <th>Address</th>
+        <th>Admin Busses</th>
+        <th>Create Date</th>
+        <th>Expire Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users | userFilter:searchTerm">
+        <td class="hidden">{{user.id}}</td>
+        <td>{{admin.username}}</td>
+        <td>{{admin.travelName}}</td>
+        <td>{{admin.adminName}}</td>
+        <td>{{admin.email}}</td>
+        <td>{{admin.phonenumber}}</td>
+        <td>{{admin.address}}</td>
+        <td>{{admin.adminBusses}}</td>
+        <td>{{admin.createDate}}</td>
+        <td>{{admin.expireDate}}</td>
+        <td><button class="btn btn-success" (click)="deleteAdmin(admin)"> Delete</button>
+          <button class="btn btn-success" (click)="editAdmin(admin)" style="margin-left: 20px;"> Edit</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  
