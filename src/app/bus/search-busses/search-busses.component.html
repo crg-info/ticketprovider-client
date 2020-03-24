@@ -1,0 +1,24 @@
+<div class="col-md-6 bus-container">
+    <h1> Booking Bus Tickets</h1>
+    
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <div class="form-group"> 
+          <label for="from">Source</label>
+            <input type="text" formControlName="from" placeholder="From" name="from" class="form-control" id="from">
+        </div>  
+        <div class="form-group"> 
+            <label for="to">Destination</label>
+              <input type="text" formControlName="to" placeholder="To" name="to" class="form-control" id="to">
+        </div>   
+        <div class="form-group"> 
+            <label for="journeyDate">JourneyDate</label>
+              <input type="date" formControlName="journeyDate" name="journeyDate" class="form-control" id="journeyDate">
+        </div> 
+        <div class="form-group"> 
+            <label for="returnDate">ReturnDate</label>
+              <input type="date" formControlName="returnDate" name="returnDate" class="form-control" id="returnDate">
+        </div>
+        <button class="btn btn-success">SearchBus</button> 
+      </form>
+    </div>
+       

@@ -42,6 +42,7 @@ import { ListAdminComponent } from './admin/list-admin/list-admin.component';
 import { SysAdminComponent } from './sys-admin/sys-admin.component';
 import { AddBussesComponent } from './bus/add-busses/add-busses.component';
 import { SearchBussesComponent } from './bus/search-busses/search-busses.component';
+import { BusService } from './bus.service';
 
 
 
@@ -95,7 +96,7 @@ import { SearchBussesComponent } from './bus/search-busses/search-busses.compone
   
   
   ],
-  providers: [ApiService, {provide: HTTP_INTERCEPTORS,
+  providers: [ApiService,BusService, {provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptor,
     multi : true}],
   bootstrap: [AppComponent]

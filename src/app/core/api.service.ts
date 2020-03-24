@@ -6,7 +6,10 @@ import {ApiResponse} from "../model/api.response";
 import { Employee } from '../model/employee.model';
 import { Student } from '../model/student.model';
 
-@Injectable()
+@Injectable({
+  
+  providedIn: 'root'
+})
 export class ApiService {
   [x: string]: any;
 
@@ -16,6 +19,8 @@ export class ApiService {
   baseUrl1: string = 'http://localhost:8080/employees/';
 
   baseUrl2: string = 'http://localhost:8080/students/';
+
+  searchUrl: string = 'http://localhost:8080/searchBusses/';
 
   login(loginPayload) : Observable<ApiResponse> {debugger;
     return this.http.post<ApiResponse>('http://localhost:8080/' + 'token/generate-token', loginPayload);
@@ -88,4 +93,8 @@ export class ApiService {
   deleteStudent(id: number): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(this.baseUrl2 + id);
   }
+  searchBus():  Observable<ApiResponse> {debugger;
+    return this.http.get<ApiResponse>(this.searchUrl);
+  }
+
 }
