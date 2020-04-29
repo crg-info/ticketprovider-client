@@ -20,7 +20,7 @@ export class ApiService {
 
   baseUrl2: string = 'http://localhost:8080/students/';
 
-  searchUrl: string = 'http://localhost:8080/searchBusses/';
+  searchUrl: string = 'http://localhost:8080/businfo/';
 
   login(loginPayload) : Observable<ApiResponse> {debugger;
     return this.http.post<ApiResponse>('http://localhost:8080/' + 'token/generate-token', loginPayload);
@@ -93,8 +93,10 @@ export class ApiService {
   deleteStudent(id: number): Observable<ApiResponse> {
     return this.http.delete<ApiResponse>(this.baseUrl2 + id);
   }
-  searchBus():  Observable<ApiResponse> {debugger;
-    return this.http.get<ApiResponse>(this.searchUrl);
+  getBusList(journyDetails:JSON):  Observable<ApiResponse> {debugger;
+    return this.http.get<ApiResponse>(this.searchUrl+journyDetails);
   }
-
+  // createCustomer(customerDetails:JSON):  Observable<ApiResponse> {debugger;
+  //   return this.http.get<ApiResponse>(this.searchUrl+customerDetails);
+  // }
 }

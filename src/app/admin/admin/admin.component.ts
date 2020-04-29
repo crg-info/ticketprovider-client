@@ -20,6 +20,7 @@ export class AdminComponent implements OnInit {
       firstName: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
       lastName: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
       travelName: ['', [Validators.required ]],
+      noOfBusses: ['', [Validators.required ]],
       email: ['', [Validators.required ]],
       phonenumber: ['', [Validators.required ]],
       address: ['', [Validators.required ]],
@@ -31,7 +32,7 @@ export class AdminComponent implements OnInit {
   onSubmit() {
     this.apiService.createAdmin(this.signForm.value)
       .subscribe( data => {
-        this.router.navigate(['admin-busses']);
+        this.router.navigate(['add-busses']);
       });
   }
 }

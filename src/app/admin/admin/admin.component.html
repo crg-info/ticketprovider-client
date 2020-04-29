@@ -9,23 +9,22 @@
       </div>
   
       <div class="form-group">
-        <label for="firstName">First Name:</label>
-        <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
-        <div class="error" *ngIf="signForm.controls['firstName'].hasError('required') && signForm.controls['firstName'].touched">firstName is required</div>
-        <div class="error" *ngIf="signForm.controls['firstName'].hasError('minlength') && signForm.controls['firstName'].touched || signForm.controls['firstName'].hasError('maxlength') && signForm.controls['firstName'].touched">firstName must be grater than 2 charectors and less than 10 charectors</div>
+        <label for="adminName">Admin Name:</label>
+        <input formControlName="adminName" placeholder="Admin Name" name="adminName" class="form-control" id="adminName">
+        <div class="error" *ngIf="signForm.controls['adminName'].hasError('required') && signForm.controls['adminName'].touched">Admin Name is required</div>
+        <div class="error" *ngIf="signForm.controls['adminName'].hasError('minlength') && signForm.controls['adminName'].touched || signForm.controls['adminName'].hasError('maxlength') && signForm.controls['adminName'].touched">Admin Name must be grater than 2 charectors and less than 10 charectors</div>
       </div>
   
-      <div class="form-group">
-        <label for="lastName">Last Name:</label>
-        <input formControlName="lastName" placeholder="Last Name" name="lastName" class="form-control" id="lastName">
-        <div class="error" *ngIf="signForm.controls['lastName'].hasError('required') && signForm.controls['lastName'].touched">lastName is required</div>
-        <div class="error" *ngIf="signForm.controls['lastName'].hasError('minlength') && signForm.controls['lastName'].touched || signForm.controls['lastName'].hasError('maxlength') && signForm.controls['lastName'].touched">lastName must be grater than 2 charectors and less than 10 charectors</div>
-      </div>
       <div class="form-group">
         <label for="travelName">Travel Name:</label>
         <input formControlName="travelName" placeholder="Travel Name" name="travelName" class="form-control" id="travelName">
         <div class="error" *ngIf="signForm.controls['travelName'].hasError('required') && signForm.controls['travelName'].touched">Travel Name is required</div>
         </div>
+        <div class="form-group">
+          <label for="adminBusses">Admin Busses:</label>
+          <input formControlName="adminBusses" placeholder="Admin Busses" name="adminBusses" class="form-control" id="adminBusses">
+          <div class="error" *ngIf="signForm.controls['adminBusses'].hasError('required') && signForm.controls['adminBusses'].touched">Admin Busses is required</div>
+          </div>
       
       <div class="form-group">
         <label for="email">Email:</label>
@@ -48,11 +47,7 @@
         <input type="password" formControlName="password" placeholder="password" name="password" class="form-control" id="password">
         <div class="error" *ngIf="signForm.controls['password'].hasError('required') && signForm.controls['password'].touched">Password is required</div>  
       </div>
-      <div class="form-group">
-        <label for="conformpassword">ConformPassword:</label>
-        <input type="password" formControlName="conformpassword" placeholder="conformpassword" name="conformpassword" class="form-control" id="conformpassword">
-        <div class="error" *ngIf="signForm.controls['conformpassword'].hasError('required') && signForm.controls['conformpassword'].touched">Password is required</div>  
-      </div>
+     
       <button class="btn btn-success">SignUp</button>
     </form>
   </div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from '../core/api.service';
+import { SignupService } from './signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +10,7 @@ import { ApiService } from '../core/api.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private router: Router, private apiService: ApiService) { }
+  constructor(private formBuilder: FormBuilder,private router: Router, private signupService: SignupService) { }
   
   signForm: FormGroup;
 
@@ -18,22 +18,27 @@ export class SignupComponent implements OnInit {
 
     this.signForm = this.formBuilder.group({
       id: [],
-      username: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
-      firstName: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
-      lastName: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
+      userName: ['', [Validators.required , Validators.minLength(2) , Validators.maxLength(10)]],
+      dob: ['', [Validators.required ]],
+      gender: ['', [Validators.required ]],
       email: ['', [Validators.required ]],
-      phonenumber: ['', [Validators.required ]],
-      address: ['', [Validators.required ]],
-      password: ['', [Validators.required ]],
-      conformpassword: ['', [Validators.required ]],
-      
+      phoneNumber: ['', [Validators.required ]],
+      userStatus: ['active'],
     });
   }
 
-  onSubmit() {
-    this.apiService.createCustomer(this.signForm.value)
+  onSubmit() {debugger;
+    var userDetails:any;
+    userDetails={"userName":this.signForm.controls.userName.value,
+                       "dob":this.signForm.controls.dob.value,
+                       "gender":this.signForm.controls.gender.value,
+                       "email":this.signForm.controls.email.value,
+                       "phoneNumber":this.signForm.controls.phoneNumber.value,
+                       "userStatus": this.signForm.controls.userStatus.value
+                      };
+    this.signupService.createRedBusUser(userDetails)
       .subscribe( data => {
-        this.router.navigate(['']);
+        this.router.navigate(['search-busses']);
       });
   }
 }

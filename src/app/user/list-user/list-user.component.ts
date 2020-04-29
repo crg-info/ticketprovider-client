@@ -41,7 +41,7 @@ export class ListUserComponent implements OnInit {
 
   addUser(): void {
     this.router.navigate(['add-user']);
-  }; 
+  };  
  
   searchUser(user : User):void{
     this.router.navigate(['search-user']);

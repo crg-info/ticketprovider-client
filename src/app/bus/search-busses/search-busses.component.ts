@@ -17,16 +17,25 @@ export class SearchBussesComponent implements OnInit {
   searchForm: FormGroup;
 
   ngOnInit() {
+    if(!window.localStorage.getItem('token')) {
+      this.router.navigate(['login']);
+      return;
+    }
 
     this.searchForm = this.formBuilder.group({
-      from: ['', [Validators.required ]],
-      to: ['', [Validators.required ]],
-      journeyDate: ['', [Validators.required ]],
-      returnDate: ['', [Validators.required]]
+      from: [''],
+      to: [''],
+      journeyDate: ['']
+      
     });
   }
   onSubmit() {debugger;
-    this.apiService.searchBus(this.searchForm.value)
+    var journyDetails:any;
+    journyDetails={"from":this.searchForm.controls.from.value,
+                       "to":this.searchForm.controls.to.value,
+                       "journeyDate":this.searchForm.controls.journeyDate.value
+                      };
+    this.apiService.getBusList(journyDetails)
       .subscribe( data => {
         this.router.navigate(['']);
       });
